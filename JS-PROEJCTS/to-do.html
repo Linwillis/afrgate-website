@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+    <link rel="stylesheet" href="to-do.css">
+</head>
+
+<body>
+    <div class="app">
+        <center>
+            <h2>TO-DO LIST</h2>
+        </center>
+        <input type="text" name="" id="input" placeholder="Enter your list">
+        <button id="button" onclick="submit()">Add-list</button>
+
+        <ul id="elements"></ul>
+
+    </div>
+
+    <script>
+        function Submit() {
+            const input = document.getElementById('input');
+            const tasks = document.getElementById('elements');
+
+            if (input.value.trim() == '') {
+                alert('PLEASE Add a TASK');
+                return;
+
+            };
+
+            const taskText = document.createTextNode(tasks.value);
+            const deleteButton = document.createElement('button');
+
+            deleteButton.appendChild(document.createTextNode('Delete'));
+            deleteButton.click = function () {
+                tasks.removeChild(tasks);
+            }
+
+            const task = document.createElement('li');
+            task.appendChild(taskText);
+            task.appendChild(deleteButton);
+
+            taskList.appendChild(task);
+            taskInput.value = '';
+
+        }
+    </script>
+</body>
+
+</html>
